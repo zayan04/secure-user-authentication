@@ -1,8 +1,8 @@
-# 🔐 Secure User Authentication System
+# Secure User Authentication System
 
 A secure and beginner-friendly user authentication web application built using **Python Flask**. This project provides essential authentication features with a focus on password security, session management, and access control.
 
-## ✨ Features
+## Features
 
 - 📝 **User Registration** – Create a new account.
 - 🔑 **Secure Login** – Authenticate users with their credentials.
@@ -14,7 +14,7 @@ A secure and beginner-friendly user authentication web application built using *
 - ⚙️ **Role-Based Access Control** – Restrict admin-only routes based on user roles.
 - 🗄️ **SQLite Database** – Store user account information.
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 - Python
 - Flask
@@ -24,7 +24,7 @@ A secure and beginner-friendly user authentication web application built using *
 - HTML & CSS
 - Git & GitHub
 
-## 📁 Project Structure
+## Project Structure
 
 ```text
 secure-user-authentication/
@@ -42,7 +42,7 @@ secure-user-authentication/
     └── dashboard.html
 ```
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### 1. Clone the Repository
 
@@ -107,11 +107,11 @@ http://127.0.0.1:5000
 
 **Note:** For production deployment, use HTTPS, enable secure cookies, and configure production-grade secret management and database settings.
 
-## 🎯 Project Objective
+## Project Objective
 
 The objective of this project is to understand and implement fundamental web application security practices, including user authentication, password protection, session handling, and role-based authorization.
 
-## 👨‍💻 Author
+##  Author
 
 **Zayan**
 
@@ -119,4 +119,4 @@ GitHub: [@zayan04](https://github.com/zayan04)
 
 ---
 
-⭐ If you find this project useful, consider giving the repository a star!
+If you find this project useful, consider giving the repository a star!
