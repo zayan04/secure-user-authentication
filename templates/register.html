@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Account | Northstar</title>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="{{ url_for('static', filename='fx.js') }}" defer></script>
+</head>
+<body>
+  <main class="auth-layout">
+    <section class="brand-panel">
+      <div class="brand-name">
+        <span class="brand-symbol">✳</span>
+        <span>Northstar</span>
+      </div>
+
+      <div class="brand-copy">
+        <p class="eyebrow">Make room for what matters</p>
+        <h2>A fresh start.<br><span>On your terms.</span></h2>
+        <p>
+          Create your account and step into a workspace designed around
+          clarity, privacy and focus.
+        </p>
+      </div>
+
+      <div class="brand-bottom">
+        Thoughtful by design &nbsp; · &nbsp; Secure access
+      </div>
+
+      <div class="orb" aria-hidden="true">
+        <div class="orb-spin">
+          <i class="ring r1"></i>
+          <i class="ring r2"></i>
+          <i class="ring r3"></i>
+        </div>
+        <i class="core"></i>
+      </div>
+    </section>
+
+    <section class="auth-panel">
+      <p class="form-kicker">Create your account / 02</p>
+      <h1>Join Northstar.</h1>
+      <p class="form-subtitle">A few details, then you're ready to go.</p>
+
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% for category, message in messages %}
+          <div class="flash-message {{ category }}">{{ message }}</div>
+        {% endfor %}
+      {% endwith %}
+
+      <form method="POST" action="{{ url_for('register') }}">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+
+        <p>
+          <label for="name">Full name</label>
+          <input type="text" id="name" name="name"
+                 placeholder="Your name" autocomplete="name" required>
+        </p>
+
+        <p>
+          <label for="email">Email address</label>
+          <input type="email" id="email" name="email"
+                 placeholder="you@example.com" autocomplete="email" required>
+        </p>
+
+        <p>
+          <label for="password">Create password</label>
+          <input type="password" id="password" name="password"
+                 placeholder="At least 12 characters"
+                 minlength="12" autocomplete="new-password" required>
+        </p>
+
+        <button type="submit">CREATE ACCOUNT &nbsp; →</button>
+      </form>
+
+      <div class="auth-footer">
+        Already have an account?
+        <a href="{{ url_for('login') }}">Sign in</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Workspace | Northstar</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main class="dashboard-panel">
+    <div class="brand-name">
+      <span class="brand-symbol">✳</span>
+      <span>Northstar</span>
+    </div>
+
+    <p class="form-kicker" style="margin-top: 45px;">
+      Your private workspace
+    </p>
+
+    <h1>Good to have you here, {{ user.name }}.</h1>
+    <p>You are signed in. Your workspace is ready whenever you are.</p>
+
+    <div class="dashboard-actions">
+      {% if user.role == 'admin' %}
+        <a href="{{ url_for('admin') }}">Open admin panel →</a>
+      {% endif %}
+
+      <form method="POST" action="{{ url_for('logout') }}">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <button type="submit">Sign out</button>
+      </form>
+    </div>
+  </main>
+</body>
+</html>
